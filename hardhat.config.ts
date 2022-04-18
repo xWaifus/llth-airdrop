@@ -7,6 +7,11 @@ import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
 
+import chai from "chai";
+import { solidity } from "ethereum-waffle";
+
+chai.use(solidity);
+
 dotenv.config();
 
 // This is a sample Hardhat task. To learn how to create your own go to

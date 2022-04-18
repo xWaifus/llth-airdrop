@@ -9,7 +9,7 @@ contract LLTH is ERC20, Ownable {
     mapping(address => bool) public managers;
 
     constructor() ERC20("mockLLTH", "ML") {
-        _mint(owner(), 100000 * (10**18));
+        managers[msg.sender] = true;
     }
 
     modifier managerOnly() {
@@ -21,11 +21,15 @@ contract LLTH is ERC20, Ownable {
         managers[manager] = state;
     }
 
-    function mint(address user, uint256 amount) external onlyOwner {
+    function mint(address user, uint256 amount) external managerOnly {
         _mint(user, amount);
     }
 
     function burn(address user, uint256 amount) external onlyOwner {
         _burn(user, amount);
+    }
+
+    function getManager(address manager) external view returns (bool) {
+        return managers[manager];
     }
 }

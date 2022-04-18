@@ -7,7 +7,6 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "./interfaces/ILLTH.sol";
 
 contract Airdrop is Ownable {
-    address public preBurnAddress;
     bytes32 public merkleRoot;
     ILLTH public llth;
 
@@ -37,9 +36,5 @@ contract Airdrop is Ownable {
 
     function setLlth(ILLTH _llth) public onlyOwner {
         llth = _llth;
-    }
-
-    function setPreBurnAddress(address addr) public onlyOwner {
-        preBurnAddress = addr;
     }
 }
