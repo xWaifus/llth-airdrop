@@ -65,6 +65,5 @@ describe('Airdrop', async () => {
 		proof = getMerkleProof(root, addresses[1], merkle)
 		await airdrop.connect(accounts[1]).claim(proof)
 		await expect(airdrop.connect(accounts[1]).claim(proof)).to.be.revertedWith('Tokens already claimed')
-
 	})
 })
