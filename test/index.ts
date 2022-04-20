@@ -37,7 +37,7 @@ describe('Airdrop', async () => {
     }
 
     // its ugly, i know and i dont care
-    const res = getMerkleTree(addresses)
+    let res = getMerkleTree(addresses)
     merkle = res[0]
     root = res[1]
 
@@ -51,10 +51,10 @@ describe('Airdrop', async () => {
   })
 
   it('happy path', async () => {
-    const proof = getMerkleProof(root, addresses[1], merkle)
+    let proof = getMerkleProof(root, addresses[1], merkle)
     await airdrop.connect(accounts[1]).claim(proof)
 
-    const balance = await llth.balanceOf(accounts[1].address)
+    let balance = await llth.balanceOf(accounts[1].address)
     expect(balance.toString()).to.be.equal((500 * 10 ** 18).toString())
   })
 
