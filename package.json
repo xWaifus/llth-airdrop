@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@openzeppelin/contracts": "^4.5.0",
+    "chai": "4.3.3",
     "hardhat": "^2.9.3",
     "keccak256": "^1.0.6",
     "merkletreejs": "^0.2.31",
@@ -17,7 +18,6 @@
     "@types/node": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
-    "chai": "^4.2.0",
     "dotenv": "^10.0.0",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
@@ -36,5 +36,11 @@
     "ts-node": "^10.7.0",
     "typechain": "^5.1.2",
     "typescript": "^4.5.2"
-  }
+  },
+  "name": "airdrop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/xWaifus/llth-airdrop.git",
+  "author": "kanedaaaa <samflynn19121@gmail.com>",
+  "license": "MIT"
 }
